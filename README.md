@@ -35,10 +35,10 @@ extract → 2. train_model → 3. evaluate_model → 4. upload_to_s3
 
 Доступные команды:
 
-airflow dags list # Список DAG
-airflow dags trigger pipeline_dag # Триггер DAG
-airflow tasks test <dag_id> <task_id> <run_date> # Тестирование задачи
-less $AIRFLOW_HOME/logs/pipeline_dag/extract/2025-06-18T00:00:00+00:00/1.log # Просмотр логов задачи
+1. airflow dags list # Список DAG
+2. airflow dags trigger pipeline_dag # Триггер DAG
+3. airflow tasks test <dag_id> <task_id> <run_date> # Тестирование задачи
+4. less $AIRFLOW_HOME/logs/pipeline_dag/extract/2025-06-18T00:00:00+00:00/1.log # Просмотр логов задачи
 
 Веса обученной модели хронятся локально в папке /results.
 Поскольку в sklearn не реализован метод сохранения весов используется библиотека joblib с удобным интерфейсом сохранения и загрузки весов. Также совместимость с sklearn и скорость выполнения являются преимуществами, из-за которых была выбрана эта библиотека.
